@@ -7,3 +7,5 @@ C:\Users\Dmitry\source\repos\CostApp\CostApp\obj\Debug\CostApp.Properties.Resour
 C:\Users\Dmitry\source\repos\CostApp\CostApp\obj\Debug\CostApp.csproj.GenerateResource.cache
 C:\Users\Dmitry\source\repos\CostApp\CostApp\obj\Debug\CostApp.exe
 C:\Users\Dmitry\source\repos\CostApp\CostApp\obj\Debug\CostApp.pdb
+C:\Users\Dmitry\source\repos\CostApp\CostApp\bin\Debug\Database.mdf
+C:\Users\Dmitry\source\repos\CostApp\CostApp\bin\Debug\Database_log.ldf

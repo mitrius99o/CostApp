@@ -1,0 +1,9 @@
+C:\Users\Dmitry\source\repos\CostApp\CostApp\bin\Debug\CostApp.exe.config
+C:\Users\Dmitry\source\repos\CostApp\CostApp\bin\Debug\CostApp.exe
+C:\Users\Dmitry\source\repos\CostApp\CostApp\bin\Debug\CostApp.pdb
+C:\Users\Dmitry\source\repos\CostApp\CostApp\obj\Debug\CostApp.csprojAssemblyReference.cache
+C:\Users\Dmitry\source\repos\CostApp\CostApp\obj\Debug\CostApp.Form1.resources
+C:\Users\Dmitry\source\repos\CostApp\CostApp\obj\Debug\CostApp.Properties.Resources.resources
+C:\Users\Dmitry\source\repos\CostApp\CostApp\obj\Debug\CostApp.csproj.GenerateResource.cache
+C:\Users\Dmitry\source\repos\CostApp\CostApp\obj\Debug\CostApp.exe
+C:\Users\Dmitry\source\repos\CostApp\CostApp\obj\Debug\CostApp.pdb

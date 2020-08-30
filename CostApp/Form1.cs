@@ -40,12 +40,7 @@ namespace CostApp
                 label3.Visible = false;
             if(!string.IsNullOrEmpty(textBox1.Text)&&!string.IsNullOrEmpty(textBox2.Text))
             {
-                command = new SqlCommand("INSERT INTO [Costs] (DateTime, Category, Cost)VALUES(@DateTime, @Category, @Cost)", CostsDB.sqlConnection);
-                command.Parameters.AddWithValue("DateTime", DateTime.Now);
-                command.Parameters.AddWithValue("Category", textBox1.Text);
-                command.Parameters.AddWithValue("Cost", textBox2.Text);
-
-                await command.ExecuteNonQueryAsync();
+                CostsDB.SqlCmdIncert(textBox1, textBox2);
             }
             else
             {
@@ -75,7 +70,6 @@ namespace CostApp
 
         private void обновитьToolStripMenuItem_Click(object sender, EventArgs e)
         {
-
             listBox1.Items.Clear();
             CostsDB.SqlCmdView("SELECT * FROM [Costs]", listBox1, label8, label10);
         }

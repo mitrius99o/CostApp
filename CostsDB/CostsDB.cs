@@ -54,6 +54,15 @@ namespace CostLib
                     sqlReader.Close();
             }
         }
+        public async static void SqlCmdIncert(TextBox category, TextBox cost)
+        {
+            sqlCommand = new SqlCommand("INSERT INTO [Costs] (DateTime, Category, Cost)VALUES(@DateTime, @Category, @Cost)", CostsDB.sqlConnection);
+            sqlCommand.Parameters.AddWithValue("DateTime", DateTime.Now);
+            sqlCommand.Parameters.AddWithValue("Category", category.Text);
+            sqlCommand.Parameters.AddWithValue("Cost", cost.Text);
+
+            await sqlCommand.ExecuteNonQueryAsync();
+        }
         private static void DayMonthAddCost()
         {
             if (DateTime.Now.Month == Convert.ToDateTime(sqlReader["DateTime"]).Month)

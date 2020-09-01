@@ -16,6 +16,9 @@ namespace CostApp
     public partial class Form1 : Form
     {
         //SqlConnection sqlConnection;
+        public InputForm inputForm;
+        public int monthWallet;
+        public int balance;
         public Form1()
         {
             InitializeComponent();
@@ -33,9 +36,8 @@ namespace CostApp
                 CostsDB.sqlConnection.Close();
         }
 
-        private async void button1_Click(object sender, EventArgs e)
+        private void button1_Click(object sender, EventArgs e)
         {
-            SqlCommand command;
             if (label3.Visible)
                 label3.Visible = false;
             if(!string.IsNullOrEmpty(textBox1.Text)&&!string.IsNullOrEmpty(textBox2.Text))
@@ -72,6 +74,22 @@ namespace CostApp
         {
             listBox1.Items.Clear();
             CostsDB.SqlCmdView("SELECT * FROM [Costs]", listBox1, label8, label10);
+        }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            inputForm = new InputForm();
+            inputForm.Show();
+        }
+
+        private void button4_Click(object sender, EventArgs e)
+        {
+            if(monthWallet>CostsDB.monthCosts)
+            {
+                MessageBox.Show($"Остаток на счете:{monthWallet - CostsDB.monthCosts}");
+            }
+            else
+                MessageBox.Show($"Вы исчерпали свой месячный бюджет");
         }
     }
 }

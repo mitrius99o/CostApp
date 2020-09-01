@@ -12,3 +12,4 @@ C:\Users\Dmitry\source\repos\CostApp\CostApp\bin\Debug\Database_log.ldf
 C:\Users\Dmitry\source\repos\CostApp\CostApp\bin\Debug\CostsDB.dll
 C:\Users\Dmitry\source\repos\CostApp\CostApp\bin\Debug\CostsDB.pdb
 C:\Users\Dmitry\source\repos\CostApp\CostApp\obj\Debug\CostApp.csproj.CopyComplete
+C:\Users\Dmitry\source\repos\CostApp\CostApp\obj\Debug\CostApp.InputForm.resources

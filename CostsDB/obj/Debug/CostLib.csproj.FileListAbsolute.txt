@@ -3,3 +3,4 @@ C:\Users\Dmitry\source\repos\CostApp\CostsDB\bin\Debug\CostsDB.pdb
 C:\Users\Dmitry\source\repos\CostApp\CostsDB\obj\Debug\CostLib.csprojAssemblyReference.cache
 C:\Users\Dmitry\source\repos\CostApp\CostsDB\obj\Debug\CostsDB.dll
 C:\Users\Dmitry\source\repos\CostApp\CostsDB\obj\Debug\CostsDB.pdb
+C:\Users\Dmitry\source\repos\CostApp\CostsDB\obj\Debug\CostLib.csproj.CoreCompileInputs.cache

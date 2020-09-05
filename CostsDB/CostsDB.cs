@@ -46,7 +46,8 @@ namespace CostLib
             }
             catch (Exception ex)
             {
-                MessageBox.Show(ex.Message.ToString(), ex.Source.ToString(), MessageBoxButtons.OK, MessageBoxIcon.Error);
+                if (ex.Message.ToString() != "Для BeginExecuteReader нужно открытое и доступное подключение Connection. Подключение устанавливается.")
+                    MessageBox.Show(ex.Message.ToString(), ex.Source.ToString(), MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
             finally
             {
@@ -60,6 +61,13 @@ namespace CostLib
             sqlCommand.Parameters.AddWithValue("DateTime", DateTime.Now);
             sqlCommand.Parameters.AddWithValue("Category", category.Text);
             sqlCommand.Parameters.AddWithValue("Cost", cost.Text);
+
+            await sqlCommand.ExecuteNonQueryAsync();
+        }
+        public async static void SqlCmdIncert(TextBox wallet)
+        {
+            sqlCommand = new SqlCommand("INSERT INTO [Wallet] (MonthWallet)VALUES(@MonthWallet)", sqlConnection);
+            sqlCommand.Parameters.AddWithValue("Wallet", wallet.Text);
 
             await sqlCommand.ExecuteNonQueryAsync();
         }

@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using CostLib;
 
 namespace CostApp
 {
@@ -21,7 +22,8 @@ namespace CostApp
         {
             if (textBox1.Text != null)
             {
-                Program.mainform.monthWallet = Convert.ToInt32(textBox1.Text);
+                CostsDB.SqlCmdIncert(textBox1);
+                //Program.mainform.monthWallet = Convert.ToInt32(textBox1.Text);
             }
             else
                 label3.Text = "Поле ввода пусто";

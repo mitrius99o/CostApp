@@ -15,7 +15,6 @@ namespace CostApp
 {
     public partial class Form1 : Form
     {
-        //SqlConnection sqlConnection;
         public InputForm inputForm;
         public int monthWallet;
         public int balance;

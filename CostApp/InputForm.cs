@@ -18,15 +18,18 @@ namespace CostApp
             InitializeComponent();
         }
 
-        private void button1_Click(object sender, EventArgs e)
+        private async void button1_Click(object sender, EventArgs e)
         {
-            if (textBox1.Text != null)
+            int count = 0;
+            foreach (/*каждый элемент в таблице Wallet*/)
+                count++;
+            if (textBox1.Text != null&&count==0)
             {
                 CostsDB.SqlCmdIncert(textBox1);
                 //Program.mainform.monthWallet = Convert.ToInt32(textBox1.Text);
             }
             else
-                label3.Text = "Поле ввода пусто";
+                label3.Text = "Поле ввода пусто или же бюджет уже установлен";
         }
     }
 }

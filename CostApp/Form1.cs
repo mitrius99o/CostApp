@@ -16,7 +16,7 @@ namespace CostApp
     public partial class Form1 : Form
     {
         public InputForm inputForm;
-        public int monthWallet;
+        //public int monthWallet;
         public int balance;
         public Form1()
         {
@@ -81,14 +81,40 @@ namespace CostApp
             inputForm.Show();
         }
 
-        private void button4_Click(object sender, EventArgs e)
+        private async void button4_Click(object sender, EventArgs e)
         {
-            if(monthWallet>CostsDB.monthCosts)
+            CostsDB.sqlReader = null;
+            CostsDB.sqlCommand = new SqlCommand("SELECT * FROM [Wallet]", CostsDB.sqlConnection);
+            try
             {
+                CostsDB.sqlReader = await CostsDB.sqlCommand.ExecuteReaderAsync();
+
+                int monthWallet = 0;
+                //monthCosts = Convert.ToInt32(CostsDB.sqlReader["DateTime"]);
+                while (await CostsDB.sqlReader.ReadAsync())
+                {
+                    monthWallet += Convert.ToInt32(CostsDB.sqlReader["MonthWallet"]);
+                }
+                MessageBox.Show($"Остаток на счете:{monthWallet-CostsDB.monthCosts}");
+            }
+            catch (Exception ex)
+            {
+                if (ex.Message.ToString() != "Для BeginExecuteReader нужно открытое и доступное подключение Connection. Подключение устанавливается.")
+                    MessageBox.Show(ex.Message.ToString(), ex.Source.ToString(), MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            finally
+            {
+                if (CostsDB.sqlReader != null)
+                    CostsDB.sqlReader.Close();
+            }
+            /*
+            if (>CostsDB.monthCosts)
+            {
+                
                 MessageBox.Show($"Остаток на счете:{monthWallet - CostsDB.monthCosts}");
             }
             else
-                MessageBox.Show($"Вы исчерпали свой месячный бюджет");
+                MessageBox.Show($"Вы исчерпали свой месячный бюджет"); */
         }
     }
 }

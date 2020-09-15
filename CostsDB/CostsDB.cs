@@ -55,6 +55,7 @@ namespace CostLib
                     sqlReader.Close();
             }
         }
+        
         public async static void SqlCmdIncert(TextBox category, TextBox cost)
         {
             sqlCommand = new SqlCommand("INSERT INTO [Costs] (DateTime, Category, Cost)VALUES(@DateTime, @Category, @Cost)", sqlConnection);
@@ -64,10 +65,10 @@ namespace CostLib
 
             await sqlCommand.ExecuteNonQueryAsync();
         }
-        public async static void SqlCmdIncert(TextBox wallet)
+        public async static void SqlCmdIncert(TextBox value)
         {
             sqlCommand = new SqlCommand("INSERT INTO [Wallet] (MonthWallet)VALUES(@MonthWallet)", sqlConnection);
-            sqlCommand.Parameters.AddWithValue("Wallet", wallet.Text);
+            sqlCommand.Parameters.AddWithValue("MonthWallet", value.Text);
 
             await sqlCommand.ExecuteNonQueryAsync();
         }
